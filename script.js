@@ -7,12 +7,20 @@ const timestamp = document.getElementById('timestamp');
 
 //Play and Pause Video
 function toggleVideoStatus() {
-  return true;
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
 }
 
 //Update Play Pause Icon
 function updatePlayIcon() {
-  return true;
+  if (video.paused) {
+    play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+  } else {
+    play.innerHTML = '<i class="fa fa-pause fa-2x"></i>'; //this turns the icon to pause ()
+  }
 }
 
 //Update progress and timestamp
@@ -27,7 +35,10 @@ function setVideoProgress() {
 
 //Stop the Video
 function stopVideo() {
-  return true;
+  video.currentTime = 0;
+  video.pause();
+  // This API does not have a video.stop, so you have to manipulate the system a little.
+  //Use .currentTime and .pause()
 }
 
 //Event Listeners (This can be an outline of the functions that need to be written)
