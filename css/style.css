@@ -22,7 +22,8 @@ h1 {
 .screen {
   cursor: pointer;
   /*allows you to play and pause everything within the "screen" window*/
-  width: 50%;
+  width: 40%;
+  max-height: 50%;
   background-color: black !important;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
@@ -31,7 +32,7 @@ h1 {
 .controls {
   background-color: #333;
   color: #fff;
-  width: 50%;
+  width: 40%;
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   display: flex;
@@ -48,7 +49,31 @@ h1 {
   cursor: pointer;
 }
 
-@media(max-width: 400px) {
+.controls .fa-play {
+  color: rgb(254, 15, 127);
+  padding: 0.25em;
+}
+
+.controls .fa-stop {
+  color: gold;
+  padding: 0.25em;
+}
+
+.controls .fa-pause {
+  color: white;
+}
+
+.controls .timestamp {
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+@media (max-width: 400px) {
 
   .screen,
   .controls {
