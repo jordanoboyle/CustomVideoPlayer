@@ -6,4 +6,15 @@ const progress = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
 
 
-//Event Listeners
+
+//Event Listeners (This can be an outline of the functions that need to be written)
+video.addEventListener('click', toggleVideoStatus);
+video.addEventListener('pause', updatePlayIcon);
+video.addEventListener('play', updatePlayIcon);
+video.addEventListener('timeupdate', updateProgress);
+
+play.addEventListener('click', toggleVideoStatus);
+
+stop.addEventListener('click', stopVideo);
+
+progress.addEventListener('change', setVideoProgress)
