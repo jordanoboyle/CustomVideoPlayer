@@ -25,12 +25,20 @@ function updatePlayIcon() {
 
 //Update progress and timestamp
 function updateProgress() {
-  return true;
+  // console.log(video.currentTime);
+  // console.log(video.duration);
+  // These are two unique ways to test what is going on
+  
+  let timeRemaining  = video.duration - video.currentTime;
+  progress.value = ((video.currentTime / video.duration) * 100);
+  console.log(progress.value);
+  
+
 }
 
 //Set Video time to progress
 function setVideoProgress() {
-  return true;  
+  video.currentTime = ((+progress.value * video.duration) / 100);
 }
 
 //Stop the Video
@@ -51,4 +59,4 @@ play.addEventListener('click', toggleVideoStatus);
 
 stop.addEventListener('click', stopVideo);
 
-progress.addEventListener('change', setVideoProgress)
+progress.addEventListener('change', setVideoProgress);
